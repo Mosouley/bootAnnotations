@@ -172,7 +172,47 @@ public abstract class BaseRepository<T> {
     public void setPersistUnit(String persistUnit) {
         this.persistUnit = persistUnit;
     }
+	
+
+								/*   F  R  O  M       B  I  G  N  O  N    */
 
 
+     public List<T> findByCriterias(String attr, String sens,int offset, int limit){
+         String className = entityClass.getSimpleName();
+         String str ="";
+         List<T> result = null;
+         
+        if( (attr != null && sens != null) && ( offset == 0 && limit == 0) ){
+        str = "select obj FROM "+className+" obj ORDER BY obj."+attr+" "+sens.toUpperCase();
+        Query query = getEntityManager().createQuery(str);
+        result = query.getResultList();
+         }
+         
+        if( (attr == null && sens == null) && ( offset != 0 && limit != 0) ){
+        str = "select obj FROM "+className+" obj ";
+        Query query = getEntityManager().createQuery(str);
+        query.setFirstResult(offset).setMaxResults(limit);
+        result = query.getResultList();
+         }
+         
+        if( (attr != null && sens != null) && ( offset != 0 && limit != 0) ){
+        str = "select obj FROM "+className+" obj ORDER BY obj."+attr+" "+sens.toUpperCase();
+        Query query = getEntityManager().createQuery(str);
+        query.setFirstResult(offset).setMaxResults(limit);
+        result = query.getResultList();
+         }
+                       
+            return result;
+    }
+     
+	 // methode qui fait une requete de recherche sur un attribut avec une valeur donnée
+     public List<T> search(Object o ,Object value){
+        
+            String className = entityClass.getSimpleName(); 
+            String s = "SELECT obj FROM "+className+" obj WHERE obj."+o+" LIKE '%"+value+"%'";
+            Query query = getEntityManager().createQuery(s);
+            List<T> result = query.getResultList();
+            return result;
+    }
 
 }

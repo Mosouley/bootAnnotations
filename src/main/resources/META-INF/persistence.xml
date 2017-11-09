@@ -4,6 +4,8 @@
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>com.bootcamp.entities.PhaseProgramme</class>
     <class>com.bootcamp.entities.Programme</class>
+    <class>com.bootcamp.entities.Projet</class>
+    <class>com.bootcamp.entities.Impact</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/wsprogramme?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>
