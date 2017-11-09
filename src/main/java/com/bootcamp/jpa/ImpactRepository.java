@@ -1,7 +1,7 @@
 
-package com.bootcamp.jpa.repositories;
+package com.bootcamp.jpa;
 
-import com.bootcamp.jpa.entities.Impact;
+import com.bootcamp.entities.Impact;
 
 public class ImpactRepository extends BaseRepository<Impact>{
   

@@ -1,7 +1,7 @@
 
-package com.bootcamp.jpa.repositories;
+package com.bootcamp.jpa;
 
-import com.bootcamp.jpa.entities.Projet;
+import com.bootcamp.entities.Projet;
 
 public class ProjetRepository extends BaseRepository<Projet>{
   

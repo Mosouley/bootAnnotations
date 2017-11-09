@@ -88,7 +88,7 @@ public class GenerateTableTest  {
 
     Date dateFinReel=new Date(2015/06/01);
 
-    List<PhaseProgramme> nomPhases=new ArrayList<>();
+    List<PhaseProgramme> nomPhases=new ArrayList<PhaseProgramme>();
     //add some phases tu this project
     nomPhases.add(nPhase1);
     nomPhases.add(nPhase2);

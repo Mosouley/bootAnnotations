@@ -2,11 +2,13 @@
  *
  * @Bignon
  */
-package com.bootcamp.jpa.entities;
+package com.bootcamp.entities;
 
+import static com.bootcamp.AppConstants.PERSISTENCE_UNIT;
 import com.bootcamp.jpa.enums.TypesImpact;
-import com.bootcamp.jpa.repositories.ImpactRepository;
+import com.bootcamp.jpa.ImpactRepository;
 import java.io.Serializable;
+import java.sql.SQLException;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -75,8 +77,8 @@ public class Impact implements Serializable{
     
     // methode qui verifie si l'instance actuelle existe deja dans la base de donnee 
     
-    public boolean isExist(){
-        ImpactRepository ir = new ImpactRepository("tpRest-mysql");
+    public boolean isExist() throws SQLException{
+        ImpactRepository ir = new ImpactRepository(PERSISTENCE_UNIT);
         List<Impact> il = ir.findAll();
         
         for (Impact impact : il) {

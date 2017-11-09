@@ -1,13 +1,16 @@
-package com.bootcamp.jpa.entities;
+package com.bootcamp.entities;
 
+import static com.bootcamp.AppConstants.PERSISTENCE_UNIT;
 import com.bootcamp.jpa.enums.EtatsProjet;
-import com.bootcamp.jpa.repositories.ProjetRepository;
+import com.bootcamp.jpa.ProjetRepository;
 import java.io.Serializable;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.validation.constraints.NotNull;
+import com.bootcamp.entities.Projet;
+import java.sql.SQLException;
 
 @Entity
 @Table(name = "rest_projet")
@@ -64,6 +67,17 @@ public class Projet implements Serializable{
     
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "projet")
     List<Impact> impacts = new ArrayList<Impact>();
+
+    public Projet(){
+        this.nom = "defaultName";
+        this.reference = "defaultreference";
+        this.description = "defaultdescription";
+        this.phaseActuelle = "defaultphaseActuelle";
+        this.budgetPrevisionnel = 100.00;
+        this.coutReel = 120.00;
+    }
+    
+    
 
     public int getId() {
         return id;
@@ -192,8 +206,9 @@ public class Projet implements Serializable{
     }
  
     // methode qui verifie si l'instance actuelle existe deja dans la base de donnee
-    public boolean isExist(){
-        ProjetRepository pr = new ProjetRepository("tpRest-mysql");
+    public boolean isExist() throws SQLException{
+        ProjetRepository pr = new ProjetRepository(PERSISTENCE_UNIT);
+        
         List<Projet> pl = pr.findAll();
         
         for (Projet projet : pl) {
