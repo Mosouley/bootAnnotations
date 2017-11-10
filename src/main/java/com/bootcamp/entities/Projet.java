@@ -1,7 +1,7 @@
 package com.bootcamp.entities;
 
 import static com.bootcamp.AppConstants.PERSISTENCE_UNIT;
-import com.bootcamp.jpa.enums.EtatsProjet;
+import com.bootcamp.enums.EtatsProjet;
 import com.bootcamp.jpa.ProjetRepository;
 import java.io.Serializable;
 import javax.persistence.*;
@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.validation.constraints.NotNull;
-import com.bootcamp.entities.Projet;
 import java.sql.SQLException;
 
 @Entity

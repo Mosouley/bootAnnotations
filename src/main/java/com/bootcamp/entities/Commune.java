@@ -26,53 +26,53 @@ import javax.ws.rs.core.Link;
  */
 @Entity
 @Table(name = "rest_commune")
-@ApiModel(value="Commune",
-	description="representation d'une signature Commune")
+@ApiModel(value = "Commune",
+        description = "representation d'une signature Commune")
 public class Commune implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @ApiModelProperty(value="Id de la Commune", required=true)
+    @ApiModelProperty(value = "Id de la Commune", required = true)
     private int id;
-    
-    @NotNull(message="l'attribut nom doit ne peut etre vide")
+
+    @NotNull(message = "l'attribut nom doit ne peut etre vide")
     @Column(nullable = false, length = 30)
-    @ApiModelProperty(value="nom de la commune", required=true)
+    @ApiModelProperty(value = "nom de la commune", required = true)
     private String nom;
-    
-    @NotNull(message="l'attribut longitude ne peut etre vide")
+
+    @NotNull(message = "l'attribut longitude ne peut etre vide")
     @Column(nullable = false)
-    @ApiModelProperty(value="longitude de la commune", required=true)
+    @ApiModelProperty(value = "longitude de la commune", required = true)
     private double longitude;
-    
-    @NotNull(message="l'attribut latitude ne peut etre vide")
+
+    @NotNull(message = "l'attribut latitude ne peut etre vide")
     @Column(nullable = false)
-    @ApiModelProperty(value="latitude de la commune", required=true)
+    @ApiModelProperty(value = "latitude de la commune", required = true)
     private double latitude;
-    
+
     @ManyToOne
-    @JoinColumn(name = "departement", referencedColumnName = "id", insertable=false, updatable=false)
+    @JoinColumn(name = "departement", referencedColumnName = "id", insertable = false, updatable = false)
     Departement departement;
-    
+
     @Transient
     private Link self;
-    
+
     public Commune() {
     }
-    
+
     public Commune(int id, String nom, double longitude, double latitude) {
         this.id = id;
         this.nom = nom;
         this.longitude = longitude;
         this.latitude = latitude;
     }
-    
+
     public Commune(String nom, double longitude, double latitude) {
         this.nom = nom;
         this.longitude = longitude;
         this.latitude = latitude;
     }
-    
+
     public int getId() {
         return id;
     }
@@ -80,7 +80,7 @@ public class Commune implements Serializable {
     public void setId(int id) {
         this.id = id;
     }
-    
+
     public String getNom() {
         return nom;
     }
@@ -88,7 +88,7 @@ public class Commune implements Serializable {
     public void setNom(String nom) {
         this.nom = nom;
     }
-    
+
     public double getLongitude() {
         return longitude;
     }
@@ -96,7 +96,7 @@ public class Commune implements Serializable {
     public void setLongitud(double longitude) {
         this.longitude = longitude;
     }
-    
+
     public double getLatitude() {
         return latitude;
     }
@@ -104,7 +104,7 @@ public class Commune implements Serializable {
     public void setLatitude(double latitude) {
         this.latitude = latitude;
     }
-    
+
     public Link getSelf() {
         return self;
     }
@@ -112,7 +112,7 @@ public class Commune implements Serializable {
     public void setSelf(Link self) {
         this.self = self;
     }
-    
+
     public Departement getDepartement() {
         return departement;
     }

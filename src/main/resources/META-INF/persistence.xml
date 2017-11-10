@@ -11,6 +11,8 @@
     <class>com.bootcamp.entities.Personne</class>
     <class>com.bootcamp.entities.Commune</class>
     <class>com.bootcamp.entities.Departement</class>
+    <class>com.bootcamp.entities.ProjetIso</class>
+    <class>com.bootcamp.entities.ImpactProjetIso</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/boot-DataBase?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>

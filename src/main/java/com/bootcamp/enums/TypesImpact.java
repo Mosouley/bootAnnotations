@@ -1,4 +1,4 @@
-package com.bootcamp.jpa.enums;
+package com.bootcamp.enums;
 
 
 public enum TypesImpact {

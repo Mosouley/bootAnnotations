@@ -27,44 +27,44 @@ import javax.ws.rs.core.Link;
  */
 @Entity
 @Table(name = "rest_departement")
-@ApiModel(value="Departement",
-	description="representation d'une signature Departement")
+@ApiModel(value = "Departement",
+        description = "representation d'une signature Departement")
 public class Departement implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @ApiModelProperty(value="Id du Departement", required=true)
+    @ApiModelProperty(value = "Id du Departement", required = true)
     private int id;
-    
-    @NotNull(message="l'attribut nom ne peut etre vide")
+
+    @NotNull(message = "l'attribut nom ne peut etre vide")
     @Column(nullable = false, length = 30)
-    @ApiModelProperty(value="nom du departement", required=true)
+    @ApiModelProperty(value = "nom du departement", required = true)
     private String nom;
-    
-    @NotNull(message="l'attribut numero ne peut etre vide")
+
+    @NotNull(message = "l'attribut numero ne peut etre vide")
     @Column(nullable = false)
-    @ApiModelProperty(value="numero du departement", required=true)
+    @ApiModelProperty(value = "numero du departement", required = true)
     private int numero;
-    
-    @NotNull(message="l'attribut longitude ne peut etre vide")
+
+    @NotNull(message = "l'attribut longitude ne peut etre vide")
     @Column(nullable = false)
-    @ApiModelProperty(value="longitude du departement", required=true)
+    @ApiModelProperty(value = "longitude du departement", required = true)
     private double longitude;
-    
-    @NotNull(message="l'attribut latitude ne peut etre vide")
+
+    @NotNull(message = "l'attribut latitude ne peut etre vide")
     @Column(nullable = false)
-    @ApiModelProperty(value="latitude du departement", required=true)
+    @ApiModelProperty(value = "latitude du departement", required = true)
     private double latitude;
-    
-    @OneToMany(mappedBy = "departement" , cascade = CascadeType.ALL)
+
+    @OneToMany(mappedBy = "departement", cascade = CascadeType.ALL)
     private List<Commune> communes;
-    
+
     @Transient
     private Link self;
-    
+
     public Departement() {
     }
-    
+
     public Departement(int id, String nom, int numero, double longitude, double latitude) {
         this.id = id;
         this.nom = nom;
@@ -72,14 +72,14 @@ public class Departement implements Serializable {
         this.longitude = longitude;
         this.latitude = latitude;
     }
-    
+
     public Departement(String nom, int numero, double longitude, double latitude) {
         this.nom = nom;
         this.numero = numero;
         this.longitude = longitude;
         this.latitude = latitude;
     }
-    
+
     public int getId() {
         return id;
     }
@@ -87,7 +87,7 @@ public class Departement implements Serializable {
     public void setId(int id) {
         this.id = id;
     }
-    
+
     public String getNom() {
         return nom;
     }
@@ -95,7 +95,7 @@ public class Departement implements Serializable {
     public void setNom(String nom) {
         this.nom = nom;
     }
-    
+
     public int getNumero() {
         return numero;
     }
@@ -103,7 +103,7 @@ public class Departement implements Serializable {
     public void setNumero(int numero) {
         this.numero = numero;
     }
-    
+
     public double getLongitude() {
         return longitude;
     }
@@ -111,7 +111,7 @@ public class Departement implements Serializable {
     public void setLongitude(double longitude) {
         this.longitude = longitude;
     }
-    
+
     public double getLatitude() {
         return latitude;
     }
@@ -119,7 +119,7 @@ public class Departement implements Serializable {
     public void setLatitude(double latitude) {
         this.latitude = latitude;
     }
-    
+
     public List<Commune> getCommuneList() {
         return this.communes;
     }
@@ -127,7 +127,7 @@ public class Departement implements Serializable {
     public void setCommuneList(List<Commune> communes) {
         this.communes = communes;
     }
-    
+
     public Link getSelf() {
         return self;
     }

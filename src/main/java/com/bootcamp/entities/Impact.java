@@ -5,7 +5,7 @@
 package com.bootcamp.entities;
 
 import static com.bootcamp.AppConstants.PERSISTENCE_UNIT;
-import com.bootcamp.jpa.enums.TypesImpact;
+import com.bootcamp.enums.TypesImpact;
 import com.bootcamp.jpa.ImpactRepository;
 import java.io.Serializable;
 import java.sql.SQLException;

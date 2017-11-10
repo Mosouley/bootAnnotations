@@ -5,58 +5,48 @@
  */
 package com.bootcamp.entities;
 
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.annotations.*;
 
-import javax.persistence.Column;
-import javax.persistence.DiscriminatorValue;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  *
  * @author Ibrahim
  */
 @Entity
-@Table(name="tp_bailleur")
+@Table(name = "tp_bailleur")
 @DiscriminatorValue("BAILLEUR")
-@ApiModel(value="Bailleur Model",description="Bailleur Model witch is a Personne Model")
+@ApiModel(value = "Bailleur Model", description = "Bailleur Model witch is a Personne Model")
 public class Bailleur extends Personne {
 
-	private static final long serialVersionUID = 1L;
-	@Column(length=45)
-	private String pays;
-	
-	public Bailleur() {
-		super();
-	}
-	public Bailleur(String nom) {
-		super(nom);
-	}
-	public Bailleur(String nom,String pays) {
-		super(nom);
-		this.pays=pays;
-	}
-	@ApiModelProperty(value="The country of the Bailleur")
-	public String getPays() {
-		return pays;
-	}
-	public void setPays(String pays) {
-		this.pays = pays;
-	}
+    private static final long serialVersionUID = 1L;
+    @Column(length = 45)
+    private String pays;
 
+    public Bailleur() {
+        super();
+    }
 
+    public Bailleur(String nom) {
+        super(nom);
+    }
 
-/*  @OneToMany
+    public Bailleur(String nom, String pays) {
+        super(nom);
+        this.pays = pays;
+    }
+
+    @ApiModelProperty(value = "The country of the Bailleur")
+    public String getPays() {
+        return pays;
+    }
+
+    public void setPays(String pays) {
+        this.pays = pays;
+    }
+
+    /*  @OneToMany
   private List<Bailleur_has_Programme> bailleur_has_programme = new ArrayList<Bailleur_has_Programme>();
   @OneToMany
  private List<Bailleur_has_Projet> bailleurHasProjet = new ArrayList<Bailleur_has_Projet>();*/
-  
-
-
-
-
-
-
-
 }
