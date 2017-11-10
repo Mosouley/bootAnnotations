@@ -7,6 +7,8 @@
     <class>com.bootcamp.entities.Projet</class>
     <class>com.bootcamp.entities.Impact</class>
     <class>com.bootcamp.entities.Indicateur</class>
+    <class>com.bootcamp.entities.Bailleur</class>
+    <class>com.bootcamp.entities.Personne</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/boot-DataBase?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>
