@@ -9,12 +9,10 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-
 public class LivrableRepository {
 
     private EntityManager em;
     private String persistUnit;
-//    private Livrable livrable;
     private EntityManagerFactory emf;
 
     public LivrableRepository(String persistUnit) {
@@ -22,7 +20,6 @@ public class LivrableRepository {
         this.persistUnit = persistUnit;
         emf = Persistence.createEntityManagerFactory(persistUnit);
         this.em = getEntityManager();
-//        this.livrable=livrable;
 
     }
 
@@ -33,11 +30,7 @@ public class LivrableRepository {
     }
 
     /**
-     * methode genetique de creation dans la bdd
-     *
-     * @param obj
-     * @return
-     * @throws SQLException
+     * methode create
      */
     public boolean create(Livrable obj) throws SQLException {
         em.getTransaction().begin();
@@ -48,11 +41,7 @@ public class LivrableRepository {
     }
 
     /**
-     * M�thode pour supprimer une entite dans la bdd
-     *
-     * @param obj
-     * @return boolean
-     * @throws java.sql.SQLException
+     * methode delete
      */
     public boolean delete(Livrable obj) throws SQLException {
         em.getTransaction().begin();
@@ -63,11 +52,7 @@ public class LivrableRepository {
     }
 
     /**
-     * M�thode de mise � jour
-     *
-     * @param obj
-     * @return boolean
-     * @throws java.sql.SQLException
+     * methode update
      */
     public boolean update(Livrable obj) throws SQLException {
         em.getTransaction().begin();
@@ -80,7 +65,6 @@ public class LivrableRepository {
     //a revoir
     public Livrable updateById(int id, Object value) throws SQLException {
 
-//          String className = livrable.getSimpleName();
         String request = "select t from Livrable t where t." + id + "=:param";
         Query query = em.createQuery(request);
         query.setParameter("param", value);
@@ -89,12 +73,7 @@ public class LivrableRepository {
     }
 
     /**
-     * M�thode de recherche des informations
-     *
-     * @param propertyName
-     * @param value
-     * @return Livrable
-     * @throws java.sql.SQLException
+     * methode findByProperty
      */
     public List<Livrable> findByProperty(String propertyName, Object value) throws SQLException {
         String query = "select t from  Livrable t where t." + propertyName + "=:param";
@@ -105,11 +84,7 @@ public class LivrableRepository {
     }
 
     /**
-     *
-     * @param propertyName
-     * @param value
-     * @return
-     * @throws SQLException
+     * methode findByPropertyUnique
      */
     public Livrable findByPropertyUnique(String propertyName, Object value) throws SQLException {
         String request = "select t from Livrable t where t." + propertyName + "=:param";
@@ -120,7 +95,7 @@ public class LivrableRepository {
     }
 
     /*
-     * M�thode de recherche de tous les objets Livrable
+     * methode de recherche de tous les objets Livrable
      */
     public List<Livrable> findAll() throws SQLException {
         String req = "select t from Livrable t";
@@ -144,26 +119,14 @@ public class LivrableRepository {
         this.emf = emf;
     }
 
-    /**
-     *
-     * @param em to set
-     */
     public void setEm(EntityManager em) {
         this.em = em;
     }
 
-    /**
-     *
-     * @return the persistence unit
-     */
     public String getPersistUnit() {
         return persistUnit;
     }
 
-    /**
-     *
-     * @param persistUnit
-     */
     public void setPersistUnit(String persistUnit) {
         this.persistUnit = persistUnit;
     }
