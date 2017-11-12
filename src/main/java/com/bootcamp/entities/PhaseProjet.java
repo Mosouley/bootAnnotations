@@ -14,9 +14,8 @@ import javax.validation.constraints.NotNull;
  *
  * @author Iso-Doss
  */
-@Entity(name = "PhaseProjetIso")
-@Table(name = "tp_phase_projet_iso")
-public class PhaseProjetIso implements Serializable {
+@Entity
+public class PhaseProjet implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -66,16 +65,16 @@ public class PhaseProjetIso implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof PhaseProjetIso)) {
+        if (!(object instanceof PhaseProjet)) {
             return false;
         }
-        PhaseProjetIso other = (PhaseProjetIso) object;
+        PhaseProjet other = (PhaseProjet) object;
         return !((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id)));
     }
 
     @Override
     public String toString() {
-        return "com.bootcamp.jpa.entities.PhaseProjetIso[ id=" + id + " ]";
+        return "com.bootcamp.jpa.entities.PhaseProjet[ id=" + id + " ]";
     }
 
     /**

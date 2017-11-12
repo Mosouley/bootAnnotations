@@ -11,9 +11,9 @@
     <class>com.bootcamp.entities.Livrable</class>
     <class>com.bootcamp.entities.Objectif</class>
     <class>com.bootcamp.entities.PhaseProgramme</class>
-    <class>com.bootcamp.entities.PhaseProjetIso</class>
     <class>com.bootcamp.entities.Programme</class>
     <class>com.bootcamp.entities.Projet</class>
+    <class>com.bootcamp.entities.PhaseProjet</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/bootcampDatabase?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>
