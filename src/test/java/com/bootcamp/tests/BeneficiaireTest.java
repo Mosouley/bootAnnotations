@@ -9,20 +9,22 @@ import com.bootcamp.AppConstants;
 import com.bootcamp.entities.Beneficiaire;
 import com.bootcamp.jpa.BeneficiaireRepository;
 import java.sql.SQLException;
+import java.util.Properties;
+import javax.persistence.Persistence;
 import org.testng.annotations.Test;
 /**
  *
  * @author Archange
  */
 public class BeneficiaireTest {
-    private final BeneficiaireRepository beneficiaireRepository = new BeneficiaireRepository(AppConstants.PERSISTENCE_UNIT);
-//    @Test
-//    public void generateTables() {
-////        Persistence.("tpJpa", new Properties());
-//        Persistence.createEntityManagerFactory(persistOne, new Properties() {
-//        });
-//
-//    }
+    BeneficiaireRepository beneficiaireRepository = new BeneficiaireRepository(AppConstants.PERSISTENCE_UNIT);
+    @Test
+    public void generateTables() {
+//        Persistence.("tpJpa", new Properties());
+        Persistence.createEntityManagerFactory(AppConstants.PERSISTENCE_UNIT, new Properties() {
+        });
+
+    }
 
    	@Test
 	public void createBeneficiaire() throws SQLException {

@@ -6,7 +6,7 @@
 package com.bootcamp.entities;
 
 import com.bootcamp.enums.TypeIndicateur;
-import com.wordnik.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 import javax.persistence.Column;

@@ -3,6 +3,7 @@
  */
 package com.bootcamp.tests;
 
+import com.bootcamp.AppConstants;
 import com.bootcamp.entities.PhaseProgramme;
 import com.bootcamp.entities.Programme;
 import com.bootcamp.jpa.PhaseProgrammeRepository;
@@ -23,7 +24,7 @@ import org.testng.annotations.Test;
  * @author soul
  */
 public class GenerateTableTest  {
-    String pu="databasePU";
+//    String pu="databasePU";
     //create a new objet phaseprogramme
         PhaseProgramme nPhase1=new PhaseProgramme();
         //create a new objet phaseprogramme
@@ -37,13 +38,13 @@ public class GenerateTableTest  {
   @Test
     public void generateTables(){
 
-        Persistence.createEntityManagerFactory(pu, new Properties() {});
+        Persistence.createEntityManagerFactory(AppConstants.PERSISTENCE_UNIT, new Properties() {});
     }
 
     @Test
     public void createPhases(){
         //need to extends baserepository for phaseprogram
-        PhaseProgrammeRepository donPhase=new PhaseProgrammeRepository(pu);
+        PhaseProgrammeRepository donPhase=new PhaseProgrammeRepository(AppConstants.PERSISTENCE_UNIT);
 
         
         //set its name
@@ -88,7 +89,7 @@ public class GenerateTableTest  {
 
     Date dateFinReel=new Date(2015/06/01);
 
-    List<PhaseProgramme> nomPhases=new ArrayList<PhaseProgramme>();
+    List<PhaseProgramme> nomPhases=new ArrayList<>();
     //add some phases tu this project
     nomPhases.add(nPhase1);
     nomPhases.add(nPhase2);
@@ -114,7 +115,7 @@ public class GenerateTableTest  {
         nvoProg.setDateFinReel(dateFinReel);
         nvoProg.setNomPhases(nomPhases);
         nvoProg.setEtatProgramme(etatProgramme);
-        ProgrammeRepository donnees=new ProgrammeRepository(pu);
+        ProgrammeRepository donnees=new ProgrammeRepository(AppConstants.PERSISTENCE_UNIT);
     try {
         donnees.create(nvoProg);
     } catch (SQLException ex) {

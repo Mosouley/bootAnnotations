@@ -1,6 +1,8 @@
 package com.bootcamp.entities;
 
 import com.bootcamp.enums.Etat;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 import java.util.List;
 
@@ -10,16 +12,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
-import com.wordnik.swagger.annotations.ApiModel;
-import com.wordnik.swagger.annotations.ApiModelProperty;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 
 @Entity
 @Table(name = "tp_livrable")
 @ApiModel(value = "Livrable",
-        description = "représentation d'une resource REST Livrable"
+        description = "representation d'une resource REST Livrable"
 )
 public class Livrable implements Serializable {
 
