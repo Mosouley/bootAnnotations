@@ -1,11 +1,11 @@
 
 package com.bootcamp.jpa;
 
-import com.bootcamp.entities.Projet;
+import com.bootcamp.entities.User;
 
-public class ProjetRepository extends BaseRepository<Projet>{
+public class UserRepository extends BaseRepository<User>{
   
-    public ProjetRepository(String unitPersistence) {
-        super(unitPersistence, Projet.class);
+    public UserRepository(String unitPersistence) {
+        super(unitPersistence, User.class);
     }
 }

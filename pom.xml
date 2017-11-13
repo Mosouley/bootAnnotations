@@ -127,6 +127,25 @@
     </build>
 
 <profiles>
+    <!-- en local -->
+    <profile>
+        <!--profil de production a publier-->
+        <id>local</id>
+       
+        <build>
+            <resources>
+                <resource>
+                    <directory>src/main/resources</directory>
+                    <filtering>true</filtering>
+                </resource>
+                <resource>
+                    <directory>src/main/resources_local</directory>
+                </resource>
+
+            </resources>
+        </build>
+    </profile>
+    
     <profile>
         <!--profil de production a publier-->
         <id>prod</id>

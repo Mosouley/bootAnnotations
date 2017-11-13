@@ -5,40 +5,43 @@
 package com.bootcamp.tests;
 
 import com.bootcamp.AppConstants;
-import com.bootcamp.entities.Projet;
-import com.bootcamp.jpa.ProjetRepository;
+import com.bootcamp.entities.User;
+import com.bootcamp.jpa.UserRepository;
 import java.sql.SQLException;
 import java.util.List;
 import org.testng.annotations.Test;
 
-public class ProjetTest {
-    ProjetRepository pr = new ProjetRepository(AppConstants.PERSISTENCE_UNIT);
+public class UserTest {
+    UserRepository pr = new UserRepository(AppConstants.PERSISTENCE_UNIT);
     
     @Test
     public void create() throws SQLException{
-     Projet projet = new Projet();     
-     pr.create(projet);
+     User user = new User();
+     user.setLogin("user000");
+     user.setPwd("pass000");     
+     pr.create(user);
      
-     projet.setNom("nom1");
-     pr.create(projet);
+     user.setLogin("user001");
+     user.setPwd("pass001");
+     pr.create(user);
      
-     projet.setNom("nom2");
-     projet.setReference("ref1");
-     pr.create(projet);
+     user.setLogin("user002");
+     user.setPwd("pass002");
+     pr.create(user);
     }
     
      public void update() throws SQLException{
-     Projet projet = pr.findByPropertyUnique("id", 3);
-     projet.setReference("ref2");
-     pr.update(projet);
+     User user = pr.findByPropertyUnique("id", 3);
+     user.setLogin("user003modifie");
+     pr.update(user);
     }
      
     public void delete() throws SQLException{
-     Projet projet = pr.findByPropertyUnique("id", 2);
-     pr.delete(projet);
+     User user = pr.findByPropertyUnique("id", 2);
+     pr.delete(user);
     }
     
      public void findall() throws SQLException{
-     List<Projet> projets = pr.findAll();
+     List<User> users = pr.findAll();
     }
 }
