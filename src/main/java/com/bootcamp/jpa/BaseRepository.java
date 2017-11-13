@@ -115,6 +115,17 @@ public abstract class BaseRepository<T> {
 
     }
 
+       public T findById(int id) throws SQLException {
+
+          String className = entityClass.getSimpleName();
+
+        String request = "select t from " + className + " t where t.id =:param";
+        Query query = getEm().createQuery(request);
+        query.setParameter("param", id);
+        return (T) query.getSingleResult();
+
+    }
+
      /*
 	  * M?thode de recherche de tous les objets T
      */
