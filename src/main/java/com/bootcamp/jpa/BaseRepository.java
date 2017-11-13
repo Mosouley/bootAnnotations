@@ -127,7 +127,7 @@ public abstract class BaseRepository<T> {
     }
 
      /*
-	  * M?thode de recherche de tous les objets T
+	  * Methode de recherche de tous les objets T
      */
     public  List<T> findAll() throws SQLException{
        String className = entityClass.getSimpleName();
