@@ -66,6 +66,9 @@ public class Projet implements Serializable{
     
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "projet")
     List<Impact> impacts = new ArrayList<Impact>();
+    
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "projet")
+    private List<PhaseProjet> phaseProjet = new ArrayList<PhaseProjet>();
 
     public Projet(){
         this.nom = "defaultName";
@@ -215,6 +218,20 @@ public class Projet implements Serializable{
                 return true;
         }
         return false;
+    }
+
+    /**
+     * @return the phaseProjet
+     */
+    public List<PhaseProjet> getPhaseProjet() {
+        return phaseProjet;
+    }
+
+    /**
+     * @param phaseProjet the phaseProjet to set
+     */
+    public void setPhaseProjet(List<PhaseProjet> phaseProjet) {
+        this.phaseProjet = phaseProjet;
     }
  
 }
