@@ -5,7 +5,7 @@
 package com.bootcamp.entities;
 
 import static com.bootcamp.AppConstants.PERSISTENCE_UNIT;
-import com.bootcamp.enums.TypesImpact;
+import com.bootcamp.enums.TypeImpact;
 import com.bootcamp.jpa.ImpactRepository;
 import java.io.Serializable;
 import java.sql.SQLException;
@@ -34,7 +34,7 @@ public class Impact implements Serializable{
     private String nom;
     
     @NotNull(message="l'attribut type doit etre renseigne")
-    private TypesImpact type;
+    private TypeImpact type;
     
     @ManyToOne(cascade = {
             CascadeType.PERSIST,
@@ -59,11 +59,11 @@ public class Impact implements Serializable{
         this.nom = nom;
     }
 
-    public TypesImpact getType() {
+    public TypeImpact getType() {
         return type;
     }
 
-    public void setType(TypesImpact type) {
+    public void setType(TypeImpact type) {
         this.type = type;
     }
 

@@ -1,7 +1,7 @@
 package com.bootcamp.entities;
 
 import static com.bootcamp.AppConstants.PERSISTENCE_UNIT;
-import com.bootcamp.enums.EtatsProjet;
+import com.bootcamp.enums.EtatProjet;
 import com.bootcamp.jpa.ProjetRepository;
 import java.io.Serializable;
 import javax.persistence.*;
@@ -62,7 +62,7 @@ public class Projet implements Serializable{
     @Column(scale = 2)
     private double coutReel;
     
-    private EtatsProjet etat=EtatsProjet.PRE_ETUDE ;
+    private EtatProjet etat=EtatProjet.pre_etude ;
     
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "projet")
     List<Impact> impacts = new ArrayList<Impact>();
@@ -74,6 +74,14 @@ public class Projet implements Serializable{
         this.phaseActuelle = "defaultphaseActuelle";
         this.budgetPrevisionnel = 100.00;
         this.coutReel = 120.00;
+    }
+
+    public EtatProjet getEtat() {
+        return etat;
+    }
+
+    public void setEtat(EtatProjet etat) {
+        this.etat = etat;
     }
     
     
@@ -174,13 +182,7 @@ public class Projet implements Serializable{
         this.coutReel = coutReel;
     }
 
-    public EtatsProjet getEtat() {
-        return etat;
-    }
 
-    public void setEtat(EtatsProjet etat) {
-        this.etat = etat;
-    }
 
 
     public List<Impact> getImpacts() {
