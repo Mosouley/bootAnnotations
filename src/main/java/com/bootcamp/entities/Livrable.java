@@ -31,7 +31,7 @@ import javax.xml.bind.annotation.XmlType;
 @ApiModel(value = "Livrable",
         description = "représentation d'une resource REST Livrable"
 )
-@XmlType(propOrder = {"idLivrable", "reference", "description", "idObjectif", "objectifs", "idLieu", "lieux", "etat"})
+@XmlType(propOrder = {"idLivrable", "reference", "description", "objectifs", "lieux", "etat"})
 public class Livrable implements Serializable {
 
     @Id
@@ -65,7 +65,7 @@ public class Livrable implements Serializable {
     }
 
     public Livrable(int idLivrable, String reference, String description, List<Object> objectifs, List<Object> lieux,
-            EtatLivrable etat, int idLieu, int idObjectif) {
+            EtatLivrable etat) {
         super();
         this.idLivrable = idLivrable;
         this.reference = reference;
