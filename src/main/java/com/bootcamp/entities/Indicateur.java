@@ -22,7 +22,6 @@ import javax.persistence.Table;
  * @author root
  */
 @Entity
-@Table(name = "service_indicateur")
 @ApiModel(value="Indicateur",description="représentation d'une resource REST Livrable")
 public class Indicateur implements Serializable {
     @Id

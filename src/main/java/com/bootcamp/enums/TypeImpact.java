@@ -1,7 +1,7 @@
 package com.bootcamp.enums;
 
 
-public enum TypesImpact {
+public enum TypeImpact {
      SOCIAL, 
      ECONOMIQUE,
      CLIMATIQUE, 

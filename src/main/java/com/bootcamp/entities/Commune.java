@@ -15,7 +15,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 import javax.ws.rs.core.Link;
@@ -25,13 +24,12 @@ import javax.ws.rs.core.Link;
  * @author Bello
  */
 @Entity
-@Table(name = "rest_commune")
 @ApiModel(value = "Commune",
         description = "representation d'une signature Commune")
 public class Commune implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @ApiModelProperty(value = "Id de la Commune", required = true)
     private int id;
 

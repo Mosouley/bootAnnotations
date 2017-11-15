@@ -1,6 +1,11 @@
 package com.bootcamp.jpa;
 
+import java.beans.IntrospectionException;
+import java.beans.Introspector;
+import java.beans.PropertyDescriptor;
+import java.lang.reflect.Method;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -225,5 +230,50 @@ public abstract class BaseRepository<T> {
             List<T> result = query.getResultList();
             return result;
     }
+     
+      public List<PropertyDescriptor> returnAskedPropertiesIfExist(Class c, String flds) throws IntrospectionException, SQLException{
+          List<PropertyDescriptor> exitedProperties = new ArrayList<>();
+          exitedProperties.clear();
+          String[] fieldArray = flds.split(",");
+           PropertyDescriptor[] propertyDescriptors = Introspector.getBeanInfo(c).getPropertyDescriptors();
+          for (PropertyDescriptor propertyDescriptor : propertyDescriptors) {
 
+           Method method = propertyDescriptor.getReadMethod();
+           if (check(fieldArray, propertyDescriptor.getName())) {
+              exitedProperties.add(propertyDescriptor);
+           }
+       }
+          return exitedProperties;
+      } 
+
+       public List<T> findSearche(String str ,String value){
+        
+            String className = entityClass.getSimpleName(); 
+            String s = "SELECT ob FROM "+className+" ob WHERE ob."+str+" LIKE '%"+value+"%'";
+            Query query = getEntityManager().createQuery(s);
+             List<T> result = query.getResultList();
+            return result;
+    }
+    
+    
+    
+     public List<T> findPerPager(int offset,int  limit){
+        
+            String className = entityClass.getSimpleName(); 
+            String s = "select ob FROM "+className+" ob";
+            Query query = getEntityManager().createQuery(s);
+            query.setFirstResult(offset).setMaxResults(limit);
+            List<T> result = query.getResultList();
+            return result;
+    }
+    
+        private boolean check(String[] fields, String field) {
+
+       for (String field1 : fields) {
+           if (field.equals(field1)) {
+               return true;
+           }
+       }
+       return false;
+   }
 }

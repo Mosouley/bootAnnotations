@@ -1,6 +1,11 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.bootcamp.entities;
 
-import com.bootcamp.enums.Etat;
+import com.bootcamp.enums.EtatLivrable;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -12,14 +17,21 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.xml.bind.annotation.XmlType;
 
+/**
+ *
+ * @author leger
+ */
 @Entity
-@Table(name = "tp_livrable")
 @ApiModel(value = "Livrable",
-        description = "representation d'une resource REST Livrable"
+        description = "représentation d'une resource REST Livrable"
 )
+@XmlType(propOrder = {"idLivrable", "reference", "description", "objectifs", "lieux", "etat"})
 public class Livrable implements Serializable {
 
     @Id
@@ -46,14 +58,14 @@ public class Livrable implements Serializable {
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     @ApiModelProperty(value = "etat du livrable", required = true)
-    private Etat etat;
+    private EtatLivrable etat;
 
     public Livrable() {
 
     }
 
     public Livrable(int idLivrable, String reference, String description, List<Object> objectifs, List<Object> lieux,
-            Etat etat) {
+            EtatLivrable etat) {
         super();
         this.idLivrable = idLivrable;
         this.reference = reference;
@@ -103,11 +115,11 @@ public class Livrable implements Serializable {
         this.lieux = lieux;
     }
 
-    public Etat getEtat() {
+    public EtatLivrable getEtat() {
         return etat;
     }
 
-    public void setEtat(Etat etat) {
+    public void setEtat(EtatLivrable etat) {
         this.etat = etat;
     }
 
