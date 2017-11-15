@@ -16,7 +16,6 @@ import javax.persistence.Table;
  * @author Archange
  */
 @Entity
-@Table(name="tp_beneficiaire")
 @DiscriminatorValue("BENEFICIAIRE")
 @ApiModel(value="Beneficiaire Model",description="Beneficiaire Model witch is a Personne Model")
 public class Beneficiaire extends Personne{

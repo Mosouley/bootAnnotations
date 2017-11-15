@@ -13,8 +13,7 @@ import javax.validation.constraints.NotNull;
  *
  * @author Iso-Doss
  */
-@Entity(name = "Objectif")
-@Table(name = "tp_objectif")
+@Entity
 public class Objectif implements Serializable {
 
     private static final long serialVersionUID = 1L;

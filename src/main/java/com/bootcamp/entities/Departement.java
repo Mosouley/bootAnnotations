@@ -16,7 +16,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 import javax.ws.rs.core.Link;
@@ -26,13 +25,12 @@ import javax.ws.rs.core.Link;
  * @author Bello
  */
 @Entity
-@Table(name = "rest_departement")
 @ApiModel(value = "Departement",
         description = "representation d'une signature Departement")
 public class Departement implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @ApiModelProperty(value = "Id du Departement", required = true)
     private int id;
 

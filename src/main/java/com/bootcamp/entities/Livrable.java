@@ -28,7 +28,6 @@ import javax.xml.bind.annotation.XmlType;
  * @author leger
  */
 @Entity
-@Table(name = "tp_livrable")
 @ApiModel(value = "Livrable",
         description = "représentation d'une resource REST Livrable"
 )

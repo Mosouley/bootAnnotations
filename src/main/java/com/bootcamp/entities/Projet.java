@@ -12,7 +12,6 @@ import javax.validation.constraints.NotNull;
 import java.sql.SQLException;
 
 @Entity
-@Table(name = "rest_projet")
 public class Projet implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -12,7 +12,6 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "tp_user")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

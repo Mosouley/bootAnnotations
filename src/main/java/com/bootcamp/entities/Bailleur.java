@@ -14,7 +14,6 @@ import javax.persistence.*;
  * @author Ibrahim
  */
 @Entity
-@Table(name = "tp_bailleur")
 @DiscriminatorValue("BAILLEUR")
 @ApiModel(value = "Bailleur Model", description = "Bailleur Model witch is a Personne Model")
 public class Bailleur extends Personne {
