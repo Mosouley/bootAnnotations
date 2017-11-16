@@ -1,4 +1,3 @@
-
 package com.bootcamp.jpa;
 
 import com.bootcamp.entities.Impact;
@@ -9,3 +8,4 @@ public class ImpactRepository extends BaseRepository<Impact>{
         super(unitPersistence, Impact.class);
     }
 }
+

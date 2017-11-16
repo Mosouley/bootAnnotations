@@ -1,3 +1,4 @@
+
 /**
  * une enumeration des differents etats possibles d'un programme, avec les possibilites
  * Etat Pre etude

@@ -1,3 +1,4 @@
+
 package com.bootcamp.jpa;
 
 import com.bootcamp.entities.Bailleur;
@@ -9,7 +10,7 @@ public class BailleurRepository extends BaseRepository<Bailleur>{
 
 	public BailleurRepository(String persistUnit) {
 		super(persistUnit, Bailleur.class);
-		// TODO Auto-generated constructor stub
+
 	}
 	
 	public Bailleur findById(Long id) throws SQLException {
@@ -36,3 +37,4 @@ public class BailleurRepository extends BaseRepository<Bailleur>{
 	
 
 }
+

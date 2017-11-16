@@ -1,7 +1,7 @@
-package com.bootcamp.jpa.enums;
+package com.bootcamp.enums;
 
 
-public enum EtatsProjet {
+public enum EtatProjet {
      PRE_ETUDE,
      FINANCEMENT,
      RECRUTEMENT_FOURNISSEURS,

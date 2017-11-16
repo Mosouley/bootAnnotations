@@ -18,7 +18,7 @@ public class TestBailleur {
 	@Test
     public void generateTables(){
 
-        Persistence.createEntityManagerFactory(AppConstants.PERSISTENCE_UNIT, new Properties() {});
+        Persistence.createEntityManagerFactory(AppConstants.PERSISTENCE_UNIT, new Properties(){});
     }
 	
 	@Test

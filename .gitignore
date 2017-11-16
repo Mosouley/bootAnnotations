@@ -1,3 +1,6 @@
 /target
 .idea/
 database.iml
+/lib
+nb-configuration.xml
+

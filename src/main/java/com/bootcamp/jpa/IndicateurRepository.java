@@ -1,3 +1,4 @@
+
 package com.bootcamp.jpa;
 
 /*
@@ -19,3 +20,4 @@ public class IndicateurRepository extends BaseRepository<Indicateur>{
     }
     
 }
+

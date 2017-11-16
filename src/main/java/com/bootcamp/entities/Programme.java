@@ -1,6 +1,5 @@
 package com.bootcamp.entities;
 
-
 import com.bootcamp.enums.EtatProgramme;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

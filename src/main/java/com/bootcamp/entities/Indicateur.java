@@ -1,12 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.bootcamp.entities;
 
 import com.bootcamp.enums.TypeIndicateur;
-import com.wordnik.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 import javax.persistence.Column;
@@ -22,7 +18,6 @@ import javax.persistence.Table;
  * @author root
  */
 @Entity
-@Table(name = "service_indicateur")
 @ApiModel(value="Indicateur",description="représentation d'une resource REST Livrable")
 public class Indicateur implements Serializable {
     @Id
@@ -125,3 +120,4 @@ public class Indicateur implements Serializable {
     
     
 }
+
