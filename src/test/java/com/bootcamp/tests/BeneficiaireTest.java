@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.bootcamp.tests;
 
 import com.bootcamp.AppConstants;
@@ -19,8 +15,8 @@ import org.testng.annotations.Test;
 public class BeneficiaireTest {
     BeneficiaireRepository beneficiaireRepository = new BeneficiaireRepository(AppConstants.PERSISTENCE_UNIT);
     @Test
+
     public void generateTables() {
-//        Persistence.("tpJpa", new Properties());
         Persistence.createEntityManagerFactory(AppConstants.PERSISTENCE_UNIT, new Properties() {
         });
 
@@ -35,7 +31,7 @@ public class BeneficiaireTest {
                 beneficiaireRepository.create(b);
                  beneficiaireRepository.create(b1);
                   beneficiaireRepository.create(b2);
-                   beneficiaireRepository.create(b);
+                   beneficiaireRepository.create(b3);
 	}
     
     
